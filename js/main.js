@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Load static parts
     try {
         const [headerRes, footerRes, contentRes] = await Promise.all([
-            fetch('/parts/header.md'),
-            fetch('/parts/footer.md'),
+            fetch('/md/parts/header.md'),
+            fetch('/md/parts/footer.md'),
             fetch('/content.json')
         ]);
         
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Router logic
     async function handleRoute() {
         const params = new URLSearchParams(window.location.search);
-        const path = params.get('p') || 'index.md';
+        const path = params.get('p') || 'md/index.md';
         const normalizedPath = path.startsWith('/') ? path.slice(1) : path;
         const metadata = contentIndex.find(item => item.path === normalizedPath) || { path: normalizedPath };
 
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             let contentMarkdown = body;
 
             // Show latest news on home page
-            if (normalizedPath === 'index.md') {
+            if (normalizedPath === 'md/index.md') {
                 const newsItems = contentIndex.filter(item => item.category === 'news');
                 newsItems.sort((a, b) => {
                     const dateA = new Date(a.date || 0);
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         </div>
     </a>
     <div class="pagination">
-        <a href="?p=news/index.md" class="pagination-btn">記事一覧を見る</a>
+        <a href="?p=md/news/index.md" class="pagination-btn">記事一覧を見る</a>
     </div>
 </section>
 `;
@@ -205,7 +205,7 @@ ${item.image ? `<img src="${item.image}" alt="${item.title}" class="news-image">
 
                 const backBtnHtml = `
                     <div class="pagination">
-                        <a href="?p=news/index.md" class="pagination-btn">
+                        <a href="?p=md/news/index.md" class="pagination-btn">
                             一覧に戻る
                         </a>
                     </div>
@@ -303,7 +303,7 @@ ${item.image ? `<img src="${item.image}" alt="${item.title}" class="news-image">
             // but a hard reload for home is also fine. Let's make it SPA-friendly.
             document.querySelector('.error-button').addEventListener('click', (e) => {
                 e.preventDefault();
-                updateRoute('index.md');
+                updateRoute('md/index.md');
             });
         }
     }
