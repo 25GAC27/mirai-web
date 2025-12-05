@@ -1,0 +1,128 @@
+[
+  {
+    "url": "/",
+    "path": "index.md",
+    "title": "Home",
+    "layout": "top"
+  },
+  {
+    "url": "/news/2025-01-01-launch",
+    "path": "news/2025-01-01-launch.md",
+    "title": "ウェブサイトを公開しました",
+    "date": "2025-01-01",
+    "category": "news",
+    "layout": "article"
+  },
+  {
+    "url": "/news/test-article-1",
+    "path": "news/test-article-1.md",
+    "title": "テストニュース記事 1",
+    "date": "2024-01-01",
+    "category": "news",
+    "layout": "article",
+    "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 1"
+  },
+  {
+    "url": "/news/test-article-2",
+    "path": "news/test-article-2.md",
+    "title": "テストニュース記事 2",
+    "date": "2024-01-02",
+    "category": "news",
+    "layout": "article",
+    "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 2"
+  },
+  {
+    "url": "/news/test-article-3",
+    "path": "news/test-article-3.md",
+    "title": "テストニュース記事 3",
+    "date": "2024-01-03",
+    "category": "news",
+    "layout": "article",
+    "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 3"
+  },
+  {
+    "url": "/news/test-article-4",
+    "path": "news/test-article-4.md",
+    "title": "テストニュース記事 4",
+    "date": "2024-01-04",
+    "category": "news",
+    "layout": "article",
+    "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 4"
+  },
+  {
+    "url": "/news/test-article-5",
+    "path": "news/test-article-5.md",
+    "title": "テストニュース記事 5",
+    "date": "2024-01-05",
+    "category": "news",
+    "layout": "article",
+    "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 5"
+  },
+  {
+    "url": "/news/test-article-6",
+    "path": "news/test-article-6.md",
+    "title": "テストニュース記事 6",
+    "date": "2024-01-06",
+    "category": "news",
+    "layout": "article",
+    "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 6"
+  },
+  {
+    "url": "/news/test-article-7",
+    "path": "news/test-article-7.md",
+    "title": "テストニュース記事 7",
+    "date": "2024-01-07",
+    "category": "news",
+    "layout": "article",
+    "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 7"
+  },
+  {
+    "url": "/news/test-article-8",
+    "path": "news/test-article-8.md",
+    "title": "テストニュース記事 8",
+    "date": "2024-01-08",
+    "category": "news",
+    "layout": "article",
+    "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 8"
+  },
+  {
+    "url": "/news/test-article-9",
+    "path": "news/test-article-9.md",
+    "title": "テストニュース記事 9",
+    "date": "2024-01-09",
+    "category": "news",
+    "layout": "article",
+    "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 9"
+  },
+  {
+    "url": "/news/test-article-10",
+    "path": "news/test-article-10.md",
+    "title": "テストニュース記事 10",
+    "date": "2024-01-10",
+    "category": "news",
+    "layout": "article",
+    "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 10"
+  },
+  {
+    "url": "/news/",
+    "path": "news/index.md",
+    "title": "News",
+    "layout": "list",
+    "collection": "news"
+  },
+  {
+    "url": "/research/",
+    "path": "research/index.md",
+    "title": "Research",
+    "layout": "list",
+    "collection": "research"
+  },
+  {
+    "url": "/research/kakiemon-red",
+    "path": "research/kakiemon-red.md",
+    "title": "柿右衛門様式の赤絵における発色メカニズムの研究",
+    "date": "2024-12-15",
+    "category": "research",
+    "layout": "article"
+  }
+]
