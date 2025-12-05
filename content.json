@@ -14,6 +14,15 @@
     "layout": "article"
   },
   {
+    "url": "/news/2025-01-02-news",
+    "path": "news/2025-01-02-news.md",
+    "title": "ニュース記事 2",
+    "date": "2025-01-02",
+    "category": "news",
+    "layout": "article",
+    "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 2"
+  },
+  {
     "url": "/news/test-article-1",
     "path": "news/test-article-1.md",
     "title": "テストニュース記事 1",

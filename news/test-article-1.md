@@ -1,6 +1,6 @@
 ---
 title: テストニュース記事 1
-date: 2024-01-01
+date: 2026-01-01
 category: news
 layout: article
 description: これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 1

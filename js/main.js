@@ -52,6 +52,48 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Construct full markdown
             let contentMarkdown = body;
 
+            // Show latest news on home page
+            if (normalizedPath === 'index.md') {
+                const newsItems = contentIndex.filter(item => item.category === 'news');
+                newsItems.sort((a, b) => {
+                    const dateA = new Date(a.date || 0);
+                    const dateB = new Date(b.date || 0);
+                    return dateB - dateA;
+                });
+
+                if (newsItems.length > 0) {
+                    const latestNews = newsItems[0];
+                    
+                    // Load News CSS if not already loaded
+                    if (!document.getElementById('news-css')) {
+                        const link = document.createElement('link');
+                        link.id = 'news-css';
+                        link.rel = 'stylesheet';
+                        link.href = '/css/news.css';
+                        document.head.appendChild(link);
+                    }
+
+                    contentMarkdown += `
+<section class="latest-news-section">
+    <h2>Latest News</h2>
+    <a href="?p=${latestNews.path}" class="news-item latest-news-item">
+        <div class="news-image-wrapper">
+             ${latestNews.image ? `<img src="${latestNews.image}" alt="${latestNews.title}" class="news-image">` : '<div class="news-image-placeholder"></div>'}
+        </div>
+        <div class="news-content">
+            <div class="news-date">${latestNews.date}</div>
+            <h3 class="news-title">${latestNews.title}</h3>
+            <p class="news-description">${latestNews.description || ''}</p>
+        </div>
+    </a>
+    <div class="pagination">
+        <a href="?p=news/index.md" class="pagination-btn">記事一覧を見る</a>
+    </div>
+</section>
+`;
+                }
+            }
+
             // Handle collections
             if (pageData.collection) {
                 const collectionItems = contentIndex.filter(item => 

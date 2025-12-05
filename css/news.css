@@ -191,3 +191,17 @@
     color: #1d1d1f;
     text-decoration: none;
 }
+
+/* Latest News on Top Page */
+.latest-news-section {
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+.latest-news-section .news-item {
+    border-bottom: none;
+}
+
+.latest-news-section .pagination {
+    margin-top: 30px;
+}
