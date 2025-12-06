@@ -192,6 +192,22 @@ ${item.image ? `<img src="${item.image}" alt="${item.title}" class="news-image">
             const mainContainer = document.createElement('main');
             mainContainer.className = 'site-main';
             
+            // DEBUG: Force display debugging info
+            const debugInfo = document.createElement('div');
+            debugInfo.style.background = '#ffebee';
+            debugInfo.style.border = '1px solid red';
+            debugInfo.style.padding = '10px';
+            debugInfo.style.marginBottom = '20px';
+            debugInfo.style.color = '#000';
+            debugInfo.innerHTML = `
+                <strong>DEBUG INFO:</strong><br>
+                Path: ${normalizedPath}<br>
+                Layout: ${pageData.layout}<br>
+                Content Length: ${contentMarkdown ? contentMarkdown.length : 0}<br>
+                User Agent: ${navigator.userAgent}<br>
+            `;
+            mainContainer.appendChild(debugInfo);
+
             // Add Back Button for Articles (at the bottom)
             if (pageData.layout === 'article') {
                 // Ensure CSS is loaded
