@@ -192,23 +192,10 @@ ${item.image ? `<img src="${item.image}" alt="${item.title}" class="news-image">
             const mainContainer = document.createElement('main');
             mainContainer.className = 'site-main';
             
-            // DEBUG: Force display debugging info
-            const debugInfo = document.createElement('div');
-            debugInfo.style.background = '#ffebee';
-            debugInfo.style.border = '1px solid red';
-            debugInfo.style.padding = '10px';
-            debugInfo.style.marginBottom = '20px';
-            debugInfo.style.color = '#000';
-            debugInfo.innerHTML = `
-                <strong>DEBUG INFO:</strong><br>
-                Path: ${normalizedPath}<br>
-                Layout: ${pageData.layout}<br>
-                Content Length: ${contentMarkdown ? contentMarkdown.length : 0}<br>
-                User Agent: ${navigator.userAgent}<br>
-            `;
-            mainContainer.appendChild(debugInfo);
+            // Generate content HTML first
+            let htmlContent = md.render(contentMarkdown);
 
-            // Add Back Button for Articles (at the bottom)
+            // Add Back Button for Articles
             if (pageData.layout === 'article') {
                 // Ensure CSS is loaded
                 if (!document.getElementById('news-css')) {
@@ -226,10 +213,27 @@ ${item.image ? `<img src="${item.image}" alt="${item.title}" class="news-image">
                         </a>
                     </div>
                 `;
-                mainContainer.innerHTML = md.render(contentMarkdown) + backBtnHtml;
-            } else {
-                mainContainer.innerHTML = md.render(contentMarkdown);
+                htmlContent += backBtnHtml;
             }
+
+            mainContainer.innerHTML = htmlContent;
+
+            // DEBUG: Force display debugging info
+            const debugInfo = document.createElement('div');
+            debugInfo.style.background = '#ffebee';
+            debugInfo.style.border = '1px solid red';
+            debugInfo.style.padding = '10px';
+            debugInfo.style.marginBottom = '20px';
+            debugInfo.style.color = '#000';
+            debugInfo.innerHTML = `
+                <strong>DEBUG INFO:</strong><br>
+                Path: ${normalizedPath}<br>
+                Layout: ${pageData.layout}<br>
+                Content Length Before Render: ${contentMarkdown ? contentMarkdown.length : 0}<br>
+                Content Length After Render: ${htmlContent.length}<br>
+                Fetch Response OK: ${response.ok}<br>
+            `;
+            mainContainer.insertBefore(debugInfo, mainContainer.firstChild);
 
             document.body.appendChild(mainContainer);
 
@@ -258,7 +262,16 @@ ${item.image ? `<img src="${item.image}" alt="${item.title}" class="news-image">
             }
 
             document.body.className = 'error-page-body';
-            document.body.innerHTML = '';
+            
+            // Display debug info on error page too
+            const errorDebug = `
+                <div style="background:#ffebee;border:1px solid red;padding:10px;margin:20px;color:black;">
+                    <strong>ERROR DEBUG:</strong><br>
+                    Message: ${error.message}<br>
+                    Path: ${normalizedPath}<br>
+                </div>
+            `;
+            document.body.innerHTML = errorDebug;
 
             // Render Header (re-use logic)
             const headerContainer = document.createElement('header');
@@ -367,13 +380,14 @@ ${item.image ? `<img src="${item.image}" alt="${item.title}" class="news-image">
     handleRoute();
 
     function parseFrontMatter(text) {
-        const pattern = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
+        // Updated regex to handle CRLF and loose spacing
+        const pattern = /^---\s*[\r\n]+([\s\S]*?)[\r\n]+---\s*[\r\n]+([\s\S]*)$/;
         const match = text.match(pattern);
         if (!match) return { attributes: {}, body: text };
         const yaml = match[1];
         const body = match[2];
         const attributes = {};
-        yaml.split('\n').forEach(line => {
+        yaml.split(/[\r\n]+/).forEach(line => {
             const parts = line.split(':');
             if (parts.length >= 2) {
                 const key = parts[0].trim();
