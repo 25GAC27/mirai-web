@@ -218,22 +218,8 @@ ${item.image ? `<img src="${item.image}" alt="${item.title}" class="news-image">
 
             mainContainer.innerHTML = htmlContent;
 
-            // DEBUG: Force display debugging info
-            const debugInfo = document.createElement('div');
-            debugInfo.style.background = '#ffebee';
-            debugInfo.style.border = '1px solid red';
-            debugInfo.style.padding = '10px';
-            debugInfo.style.marginBottom = '20px';
-            debugInfo.style.color = '#000';
-            debugInfo.innerHTML = `
-                <strong>DEBUG INFO:</strong><br>
-                Path: ${normalizedPath}<br>
-                Layout: ${pageData.layout}<br>
-                Content Length Before Render: ${contentMarkdown ? contentMarkdown.length : 0}<br>
-                Content Length After Render: ${htmlContent.length}<br>
-                Fetch Response OK: ${response.ok}<br>
-            `;
-            mainContainer.insertBefore(debugInfo, mainContainer.firstChild);
+            // DEBUG: Force display debugging info (REMOVED)
+
 
             document.body.appendChild(mainContainer);
 
@@ -263,15 +249,8 @@ ${item.image ? `<img src="${item.image}" alt="${item.title}" class="news-image">
 
             document.body.className = 'error-page-body';
             
-            // Display debug info on error page too
-            const errorDebug = `
-                <div style="background:#ffebee;border:1px solid red;padding:10px;margin:20px;color:black;">
-                    <strong>ERROR DEBUG:</strong><br>
-                    Message: ${error.message}<br>
-                    Path: ${normalizedPath}<br>
-                </div>
-            `;
-            document.body.innerHTML = errorDebug;
+            // Display debug info on error page too (REMOVED)
+
 
             // Render Header (re-use logic)
             const headerContainer = document.createElement('header');
