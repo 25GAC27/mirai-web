@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Load static parts
     try {
         const [headerRes, footerRes, contentRes] = await Promise.all([
-            fetch('/md/parts/header.md'),
-            fetch('/md/parts/footer.md'),
-            fetch('/content.json')
+            fetch('md/parts/header.md'),
+            fetch('md/parts/footer.md'),
+            fetch('content.json')
         ]);
         
         headerMd = await headerRes.text();
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                         const link = document.createElement('link');
                         link.id = 'news-css';
                         link.rel = 'stylesheet';
-                        link.href = '/css/news.css';
+                        link.href = 'css/news.css';
                         document.head.appendChild(link);
                     }
 
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     const link = document.createElement('link');
                     link.id = 'news-css';
                     link.rel = 'stylesheet';
-                    link.href = '/css/news.css';
+                    link.href = 'css/news.css';
                     document.head.appendChild(link);
                 }
 
@@ -199,7 +199,7 @@ ${item.image ? `<img src="${item.image}" alt="${item.title}" class="news-image">
                     const link = document.createElement('link');
                     link.id = 'news-css';
                     link.rel = 'stylesheet';
-                    link.href = '/css/news.css';
+                    link.href = 'css/news.css';
                     document.head.appendChild(link);
                 }
 
@@ -237,7 +237,7 @@ ${item.image ? `<img src="${item.image}" alt="${item.title}" class="news-image">
                 const link = document.createElement('link');
                 link.id = 'error-css';
                 link.rel = 'stylesheet';
-                link.href = '/css/error.css';
+                link.href = 'css/error.css';
                 document.head.appendChild(link);
             }
 
@@ -279,7 +279,7 @@ ${item.image ? `<img src="${item.image}" alt="${item.title}" class="news-image">
             errorContainer.innerHTML = `
                 <div class="error-container">
                     <div class="error-image-wrapper">
-                        <img src="/images/error/404.webp" alt="404 Not Found" class="error-image">
+                        <img src="images/error/404.webp" alt="404 Not Found" class="error-image">
                     </div>
                     <div class="error-text-wrapper">
                         <h1 class="error-title">Oops!</h1>
