@@ -250,6 +250,8 @@ ${item.image ? `<img src="${item.image}" alt="${item.title}" class="news-image">
             document.body.className = 'error-page-body';
             
             // Display debug info on error page too (REMOVED)
+            
+            document.body.innerHTML = ''; // Clear existing content including header/footer
 
 
             // Render Header (re-use logic)
