@@ -133,5 +133,11 @@
     "date": "2024-12-15",
     "category": "research",
     "layout": "article"
+  },
+  {
+    "url": "/kakiemon/",
+    "path": "md/kakiemon/index.md",
+    "title": "15代 酒井田柿右衛門について",
+    "layout": "article"
   }
 ]
