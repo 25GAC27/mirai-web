@@ -6,6 +6,13 @@
     "layout": "top"
   },
   {
+    "url": "/news/",
+    "path": "md/news/index.md",
+    "title": "News",
+    "layout": "list",
+    "collection": "news"
+  },
+  {
     "url": "/news/2025-01-01-launch",
     "path": "md/news/2025-01-01-launch.md",
     "title": "ウェブサイトを公開しました",
@@ -26,10 +33,19 @@
     "url": "/news/test-article-1",
     "path": "md/news/test-article-1.md",
     "title": "テストニュース記事 1",
-    "date": "2024-01-01",
+    "date": "2026-01-01",
     "category": "news",
     "layout": "article",
     "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 1"
+  },
+  {
+    "url": "/news/test-article-10",
+    "path": "md/news/test-article-10.md",
+    "title": "テストニュース記事 10",
+    "date": "2024-01-10",
+    "category": "news",
+    "layout": "article",
+    "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 10"
   },
   {
     "url": "/news/test-article-2",
@@ -102,22 +118,6 @@
     "category": "news",
     "layout": "article",
     "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 9"
-  },
-  {
-    "url": "/news/test-article-10",
-    "path": "md/news/test-article-10.md",
-    "title": "テストニュース記事 10",
-    "date": "2024-01-10",
-    "category": "news",
-    "layout": "article",
-    "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 10"
-  },
-  {
-    "url": "/news/",
-    "path": "md/news/index.md",
-    "title": "News",
-    "layout": "list",
-    "collection": "news"
   },
   {
     "url": "/research/",
