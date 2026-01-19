@@ -1,4 +1,4 @@
-# Traditional Mirai Research Center Web
+# 伝統みらい研究センター ウェブサイト
 
 このプロジェクトは、MarkdownファイルをベースにしたSPA（Single Page Application）ライクな静的ウェブサイトです。
 HTML/CSS/JavaScriptのみで構成されており、ビルドプロセスを必要とせずにMarkdownを動的にレンダリングして表示します。
