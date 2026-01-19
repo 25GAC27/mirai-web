@@ -2,50 +2,28 @@
   {
     "url": "/",
     "path": "md/index.md",
-    "title": "Home",
-    "layout": "top"
+    "layout": "top",
+    "title": "Home"
+  },
+  {
+    "url": "/kakiemon/",
+    "path": "md/kakiemon/index.md",
+    "layout": "article",
+    "title": "15代 酒井田柿右衛門について"
   },
   {
     "url": "/news/",
     "path": "md/news/index.md",
-    "title": "News",
     "layout": "list",
-    "collection": "news"
+    "collection": "news",
+    "title": "News"
   },
   {
-    "url": "/news/2025-01-01-launch",
-    "path": "md/news/2025-01-01-launch.md",
-    "title": "ウェブサイトを公開しました",
-    "date": "2025-01-01",
-    "category": "news",
-    "layout": "article"
-  },
-  {
-    "url": "/news/2025-01-02-news",
-    "path": "md/news/2025-01-02-news.md",
-    "title": "ニュース記事 2",
-    "date": "2025-01-02",
-    "category": "news",
-    "layout": "article",
-    "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 2"
-  },
-  {
-    "url": "/news/test-article-1",
-    "path": "md/news/test-article-1.md",
-    "title": "テストニュース記事 1",
-    "date": "2026-01-01",
-    "category": "news",
-    "layout": "article",
-    "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 1"
-  },
-  {
-    "url": "/news/test-article-10",
-    "path": "md/news/test-article-10.md",
-    "title": "テストニュース記事 10",
-    "date": "2024-01-10",
-    "category": "news",
-    "layout": "article",
-    "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 10"
+    "url": "/research/",
+    "path": "md/research/index.md",
+    "layout": "list",
+    "collection": "research",
+    "title": "Research"
   },
   {
     "url": "/news/test-article-2",
@@ -120,11 +98,13 @@
     "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 9"
   },
   {
-    "url": "/research/",
-    "path": "md/research/index.md",
-    "title": "Research",
-    "layout": "list",
-    "collection": "research"
+    "url": "/news/test-article-10",
+    "path": "md/news/test-article-10.md",
+    "title": "テストニュース記事 10",
+    "date": "2024-01-10",
+    "category": "news",
+    "layout": "article",
+    "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 10"
   },
   {
     "url": "/research/kakiemon-red",
@@ -135,9 +115,29 @@
     "layout": "article"
   },
   {
-    "url": "/kakiemon/",
-    "path": "md/kakiemon/index.md",
-    "title": "15代 酒井田柿右衛門について",
+    "url": "/news/2025-01-01-launch",
+    "path": "md/news/2025-01-01-launch.md",
+    "title": "ウェブサイトを公開しました",
+    "date": "2025-01-01",
+    "category": "news",
     "layout": "article"
+  },
+  {
+    "url": "/news/2025-01-02-news",
+    "path": "md/news/2025-01-02-news.md",
+    "title": "ニュース記事 2",
+    "date": "2025-01-02",
+    "category": "news",
+    "layout": "article",
+    "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 2"
+  },
+  {
+    "url": "/news/test-article-1",
+    "path": "md/news/test-article-1.md",
+    "title": "テストニュース記事 1",
+    "date": "2026-01-01",
+    "category": "news",
+    "layout": "article",
+    "description": "これはテスト用のニュース記事です。ページネーションの動作確認に使用します。記事番号: 1"
   }
 ]
